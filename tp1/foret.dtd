@@ -1,0 +1,6 @@
+<!ELEMENT foret   (arbre | chemin)*>
+<!ELEMENT chemin  (#PCDATA)>
+<!ELEMENT arbre   (tronc)>
+<!ELEMENT tronc   (branche*)>
+<!ELEMENT branche (branche* | feuille)*>
+<!ELEMENT feuille EMPTY>
