@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foret>
+  <arbre>
+    <tronc>
+      <branche>
+        <feuille/>
+      </branche>
+    </tronc>
+  </arbre>
+  <chemin>un sentier</chemin>
+  <arbre>
+    <tronc>
+      <branche>
+        <branche>
+          <feuille/>
+        </branche>
+      </branche>
+    </tronc>
+  </arbre>
+  <chemin>un chemin</chemin>
+</foret>
