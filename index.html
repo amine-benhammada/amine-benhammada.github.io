@@ -15,129 +15,109 @@
   <meta property="dc:description" content="Portfolio personnel de Ahmed Amine Benhammada, étudiant en informatique à l'Institut Galilée, annoté en RDFa.">
   <meta property="dc:publisher"   content="Ahmed Amine Benhammada">
   <meta property="dc:date" datatype="xsd:date" content="2026-06-19">
+
+  <!-- Polices + feuille de style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <!-- ===== Le BODY est déclaré comme un document FOAF ; 'about' = l'URL de la page ===== -->
-<body typeof="foaf:Document"
-      about="https://amine-benhammada.github.io/">
+<body typeof="foaf:Document" about="https://amine-benhammada.github.io/">
 
-  <h1 property="dc:title">Portfolio de Ahmed Amine Benhammada</h1>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <!-- ===== La PERSONNE décrite : foaf:Person. '#me' = son identifiant ===== -->
-  <main typeof="foaf:Person"
-        about="https://amine-benhammada.github.io/#me">
+  <div class="wrap">
 
-    <!-- Nom complet + prénom/nom décomposés -->
-    <h2 property="foaf:name">
-      <span property="foaf:givenName">Ahmed Amine</span>
-      <span property="foaf:familyName">Benhammada</span>
-    </h2>
+    <!-- dc:title du document : valeur complète via 'content', affichage court via le texte -->
+    <h1 class="kicker" property="dc:title" content="Portfolio de Ahmed Amine Benhammada">Portfolio</h1>
 
-    <p property="foaf:title">Étudiant en informatique (alternant) à l'Institut Galilée</p>
+    <!-- ===== La PERSONNE : foaf:Person. '#me' = son identifiant ===== -->
+    <main class="profile" typeof="foaf:Person" about="https://amine-benhammada.github.io/#me">
 
-    <p property="dc:description">
-      Étudiant en informatique à l'Institut Galilée (Université Sorbonne Paris Nord),
-      en alternance chez SFR. Je m'intéresse au développement web, au web sémantique
-      et au design d'interfaces.
-    </p>
+      <header class="hero">
+        <h2 class="hero__name" property="foaf:name"><span property="foaf:givenName">Ahmed Amine</span> <span class="hero__last" property="foaf:familyName">Benhammada</span></h2>
+        <p class="hero__role" property="foaf:title">Étudiant en informatique (alternant) à l'Institut Galilée</p>
+        <p class="hero__bio" property="dc:description">Étudiant en informatique à l'Institut Galilée (Université Sorbonne Paris Nord), en alternance chez SFR. Je m'intéresse au développement web, au web sémantique et au design d'interfaces.</p>
 
-    <!-- ===== Coordonnées : objets = URI grâce à href ===== -->
-    <h3>Coordonnées</h3>
-    <ul>
-      <li>Email :
-        <a property="foaf:mbox" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr">ahmedamine.benhammada@edu.univ-paris13.fr</a>
-      </li>
-      <li>Téléphone :
-        <a property="foaf:phone" href="tel:+33623453854">+33 6 23 45 38 54</a>
-      </li>
-      <li>Page personnelle :
-        <a property="foaf:homepage" href="https://amine-benhammada.github.io/">mon portfolio</a>
-      </li>
-      <li>Profil LinkedIn :
-        <a property="foaf:account" href="https://www.linkedin.com/in/amine-benhammada-810843228/">LinkedIn</a>
-      </li>
-      <li>Établissement :
-        <a property="foaf:schoolHomepage" href="https://galilee.univ-paris13.fr/">Institut Galilée</a>
-      </li>
-    </ul>
+        <nav class="contact" aria-label="Coordonnées">
+          <a class="contact__link" property="foaf:mbox" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr">Email</a>
+          <a class="contact__link" property="foaf:phone" href="tel:+33623453854">Téléphone</a>
+          <a class="contact__link" property="foaf:homepage" href="https://amine-benhammada.github.io/">Portfolio</a>
+          <a class="contact__link" property="foaf:account" href="https://www.linkedin.com/in/amine-benhammada-810843228/">LinkedIn</a>
+          <a class="contact__link" property="foaf:schoolHomepage" href="https://galilee.univ-paris13.fr/">Institut Galilée</a>
+        </nav>
+      </header>
 
-    <!-- ===== Projets : foaf:Project (FOAF) décrits avec Dublin Core (dc:*) ===== -->
-    <h3>Projets</h3>
+      <!-- ===== Projets : foaf:Project (FOAF) décrits avec Dublin Core (dc:*) ===== -->
+      <section class="projects" aria-label="Projets">
+        <h3 class="section-head">Projets</h3>
 
-    <!-- Projet 1 -->
-    <article property="foaf:made" typeof="foaf:Project"
-             resource="https://amine-benhammada.github.io/#projet-tautologie">
-      <h4 property="dc:title">Implémentation de la tautologie en OCaml</h4>
-      <p property="dc:description">
-        Implémentation d'un vérificateur de tautologie en OCaml, réalisée à l'Université Sorbonne Paris Nord.
-      </p>
-      <p>Période : <span property="dc:date">Mars 2024 – Avril 2024</span></p>
-      <p>Compétences :
-        <span property="dc:subject">OCaml</span>,
-        <span property="dc:subject">Développement d'algorithmes</span>
-      </p>
-      <p>Code : <a property="foaf:homepage" href="https://github.com/KESHRUD/Tautologie">GitHub</a></p>
-    </article>
+        <!-- Projet 1 -->
+        <article class="card" property="foaf:made" typeof="foaf:Project" resource="https://amine-benhammada.github.io/#projet-tautologie">
+          <h4 class="card__title" property="dc:title">Implémentation de la tautologie en OCaml</h4>
+          <p class="card__desc" property="dc:description">Implémentation d'un vérificateur de tautologie en OCaml, réalisée à l'Université Sorbonne Paris Nord.</p>
+          <p class="card__period"><span class="meta-key">Période</span> <span property="dc:date">Mars 2024 – Avril 2024</span></p>
+          <ul class="tags">
+            <li class="tag" property="dc:subject">OCaml</li>
+            <li class="tag" property="dc:subject">Développement d'algorithmes</li>
+          </ul>
+          <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/Tautologie">Voir sur GitHub <span aria-hidden="true">&rarr;</span></a>
+        </article>
 
-    <!-- Projet 2 -->
-    <article property="foaf:made" typeof="foaf:Project"
-             resource="https://amine-benhammada.github.io/#projet-octopunks">
-      <h4 property="dc:title">OCTOPUNKS — un clone d'EXAPUNKS</h4>
-      <p property="dc:description">
-        Conception d'un clone d'EXAPUNKS, un jeu de programmation, à l'Université Sorbonne Paris Nord.
-      </p>
-      <p>Période : <span property="dc:date">2024</span></p>
-      <p>Compétences :
-        <span property="dc:subject">Java Swing</span>,
-        <span property="dc:subject">LaTeX</span>
-      </p>
-      <p>Code : <a property="foaf:homepage" href="https://github.com/KESHRUD/OCTOPUNKS">GitHub</a></p>
-    </article>
+        <!-- Projet 2 -->
+        <article class="card" property="foaf:made" typeof="foaf:Project" resource="https://amine-benhammada.github.io/#projet-octopunks">
+          <h4 class="card__title" property="dc:title">OCTOPUNKS — un clone d'EXAPUNKS</h4>
+          <p class="card__desc" property="dc:description">Conception d'un clone d'EXAPUNKS, un jeu de programmation, à l'Université Sorbonne Paris Nord.</p>
+          <p class="card__period"><span class="meta-key">Période</span> <span property="dc:date">2024</span></p>
+          <ul class="tags">
+            <li class="tag" property="dc:subject">Java Swing</li>
+            <li class="tag" property="dc:subject">LaTeX</li>
+          </ul>
+          <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/OCTOPUNKS">Voir sur GitHub <span aria-hidden="true">&rarr;</span></a>
+        </article>
 
-    <!-- Projet 3 -->
-    <article property="foaf:made" typeof="foaf:Project"
-             resource="https://amine-benhammada.github.io/#projet-client-serveur">
-      <h4 property="dc:title">Application client-serveur en langage C</h4>
-      <p property="dc:description">
-        Conception et développement d'une application client-serveur en langage C
-        à l'Université Sorbonne Paris Nord.
-      </p>
-      <p>Compétences :
-        <span property="dc:subject">Protocole TCP</span>,
-        <span property="dc:subject">Manipulation des Threads</span>
-      </p>
-    </article>
+        <!-- Projet 3 -->
+        <article class="card" property="foaf:made" typeof="foaf:Project" resource="https://amine-benhammada.github.io/#projet-client-serveur">
+          <h4 class="card__title" property="dc:title">Application client-serveur en langage C</h4>
+          <p class="card__desc" property="dc:description">Conception et développement d'une application client-serveur en langage C à l'Université Sorbonne Paris Nord.</p>
+          <ul class="tags">
+            <li class="tag" property="dc:subject">Protocole TCP</li>
+            <li class="tag" property="dc:subject">Manipulation des Threads</li>
+          </ul>
+        </article>
 
-    <!-- Projet 4 -->
-    <article property="foaf:made" typeof="foaf:Project"
-             resource="https://amine-benhammada.github.io/#projet-unification">
-      <h4 property="dc:title">Algorithme d'Unification en OCaml</h4>
-      <p property="dc:description">
-        Traduction d'un algorithme logique d'unification en langage OCaml,
-        à l'Université Sorbonne Paris Nord.
-      </p>
-      <p>Compétences :
-        <span property="dc:subject">OCaml</span>,
-        <span property="dc:subject">LaTeX</span>
-      </p>
-    </article>
+        <!-- Projet 4 -->
+        <article class="card" property="foaf:made" typeof="foaf:Project" resource="https://amine-benhammada.github.io/#projet-unification">
+          <h4 class="card__title" property="dc:title">Algorithme d'Unification en OCaml</h4>
+          <p class="card__desc" property="dc:description">Traduction d'un algorithme logique d'unification en langage OCaml, à l'Université Sorbonne Paris Nord.</p>
+          <ul class="tags">
+            <li class="tag" property="dc:subject">OCaml</li>
+            <li class="tag" property="dc:subject">LaTeX</li>
+          </ul>
+        </article>
 
-    <!-- Projet 5 -->
-    <article property="foaf:made" typeof="foaf:Project"
-             resource="https://amine-benhammada.github.io/#projet-sac-a-dos">
-      <h4 property="dc:title">Problème du Sac à dos 0/1 en C / Python</h4>
-      <p property="dc:description">
-        Conception et analyse d'algorithmes (backtracking, programmation dynamique,
-        approche gloutonne) pour résoudre le problème du sac à dos 0/1.
-      </p>
-      <p>Compétences :
-        <span property="dc:subject">Analyse de complexité</span>,
-        <span property="dc:subject">Langage C</span>,
-        <span property="dc:subject">Python</span>
-      </p>
-    </article>
+        <!-- Projet 5 -->
+        <article class="card" property="foaf:made" typeof="foaf:Project" resource="https://amine-benhammada.github.io/#projet-sac-a-dos">
+          <h4 class="card__title" property="dc:title">Problème du Sac à dos 0/1 en C / Python</h4>
+          <p class="card__desc" property="dc:description">Conception et analyse d'algorithmes (backtracking, programmation dynamique, approche gloutonne) pour résoudre le problème du sac à dos 0/1.</p>
+          <ul class="tags">
+            <li class="tag" property="dc:subject">Analyse de complexité</li>
+            <li class="tag" property="dc:subject">Langage C</li>
+            <li class="tag" property="dc:subject">Python</li>
+          </ul>
+        </article>
 
-  </main>
+      </section>
 
+    </main>
+
+    <footer class="foot">
+      <span>Annoté en RDFa &middot; Dublin Core + FOAF</span>
+      <span>&copy; 2026 Ahmed Amine Benhammada</span>
+    </footer>
+
+  </div>
 </body>
 </html>
