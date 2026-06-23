@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--
   Portfolio multilingue — Ahmed Amine Benhammada
-  • Flux à la fois HTML5 ET XHTML valide (balises fermées, xmlns, xml:lang…), servi en text/html.
-  • Détection de langue (priorité) : GET ?lang  >  clic bouton (≈POST)  >  session (localStorage)
-    >  langues préférées du navigateur (≈Accept-Language)  >  défaut (fr).
-  • Métadonnées sémantiques : RDFa (Dublin Core + FOAF) + schema.org (RDFa inline + JSON-LD).
-  • Contenu stocké dans data/content.xml (format TMX 1.4), lu par le contrôleur JS.
-  Le texte FR ci-dessous est le contenu PAR DÉFAUT : le site reste lisible même sans JavaScript.
+  • Flux à la fois HTML5 ET XHTML valide, servi en text/html.
+  • Détection de langue : GET ?lang > bouton (≈POST) > session (localStorage)
+    > langues du navigateur (≈Accept-Language) > défaut (fr).
+  • Métadonnées RDFa (Dublin Core + FOAF) + schema.org (inline + JSON-LD).
+  • Contenu dans data/content.xml (TMX 1.4), lu par le contrôleur JS.
+  • La partie « Web sémantique » (travaux du cours) est séparée du CV professionnel.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"
       lang="fr" xml:lang="fr" dir="ltr"
@@ -14,35 +14,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title property="dc:title" data-i18n="meta_title">Portfolio — Ahmed Amine Benhammada</title>
 
-  <!-- ===== Métadonnées Dublin Core (RDFa) : décrivent le DOCUMENT ===== -->
   <meta name="author" content="Ahmed Amine Benhammada" />
   <meta property="dc:creator"     content="Ahmed Amine Benhammada" />
   <meta property="dc:publisher"   content="Ahmed Amine Benhammada" />
   <meta property="dc:language"    id="dc-language" content="fr" />
   <meta property="dc:subject"     id="dc-subject"  data-i18n-attr="content:meta_subject"
-        content="Portfolio, Web sémantique, RDFa, FOAF, Dublin Core, schema.org, Développement web" />
+        content="Portfolio, Ingénierie logicielle, Web sémantique, RDFa, FOAF, Dublin Core, schema.org" />
   <meta property="dc:description" id="dc-description" data-i18n-attr="content:meta_description"
-        content="Portfolio multilingue d'Ahmed Amine Benhammada, étudiant en informatique à l'Institut Galilée, annoté en RDFa." />
-  <meta property="dc:date" datatype="xsd:date" content="2026-06-22" />
+        content="Portfolio multilingue d'Ahmed Amine Benhammada — apprenti ingénieur logiciel chez SFR, étudiant à Sup Galilée." />
+  <meta property="dc:date" datatype="xsd:date" content="2026-06-23" />
   <meta name="description" id="meta-description" data-i18n-attr="content:meta_description"
-        content="Portfolio multilingue d'Ahmed Amine Benhammada, étudiant en informatique à l'Institut Galilée, annoté en RDFa." />
+        content="Portfolio multilingue d'Ahmed Amine Benhammada — apprenti ingénieur logiciel chez SFR, étudiant à Sup Galilée." />
 
-  <!-- ===== Liens « alternate » pour le référencement (une version par langue) ===== -->
   <link rel="canonical"  id="link-canonical" href="?lang=fr" />
   <link rel="alternate" hreflang="fr" href="?lang=fr" />
   <link rel="alternate" hreflang="en" href="?lang=en" />
   <link rel="alternate" hreflang="ar" href="?lang=ar" />
   <link rel="alternate" hreflang="x-default" href="?lang=fr" />
 
-  <!-- ===== Open Graph (la locale suit la langue active) ===== -->
   <meta property="og:type"   content="profile" />
   <meta property="og:title"  id="og-title" data-i18n-attr="content:meta_title" content="Portfolio — Ahmed Amine Benhammada" />
   <meta property="og:locale" id="og-locale" content="fr_FR" />
 
-  <!-- ===== schema.org : la personne décrite, en JSON-LD (rempli/maj par le contrôleur) ===== -->
   <script type="application/ld+json" id="ld-person">
   {
     "@context": "https://schema.org",
@@ -52,183 +47,351 @@
     "familyName": "Benhammada",
     "url": "https://amine-benhammada.github.io/",
     "email": "mailto:ahmedamine.benhammada@edu.univ-paris13.fr",
-    "jobTitle": "Étudiant en informatique (alternant)",
-    "knowsLanguage": ["fr", "en", "ar"],
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Institut Galilée — Université Sorbonne Paris Nord" },
-    "sameAs": ["https://www.linkedin.com/in/amine-benhammada-810843228/"]
+    "telephone": "+33623453854",
+    "jobTitle": "Software Engineering Apprentice",
+    "knowsLanguage": ["ar", "fr", "en"],
+    "worksFor": { "@type": "Organization", "name": "SFR (Altice France)" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Sup Galilée — Université Sorbonne Paris Nord" },
+      { "@type": "CollegeOrUniversity", "name": "Institut Galilée — Université Sorbonne Paris Nord" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Massy", "addressRegion": "Île-de-France", "addressCountry": "FR" },
+    "sameAs": [
+      "https://www.linkedin.com/in/amine-benhammada-810843228/",
+      "https://github.com/KESHRUD",
+      "https://3d-amine-benhammada-portfolio.vercel.app"
+    ]
   }
   </script>
 
-  <!-- Polices + feuille de style -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Naskh+Arabic:wght@400;500;600&amp;display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- Détermine la langue AVANT le rendu pour fixer lang/dir sans clignotement -->
   <script src="assets/js/boot.js"></script>
 </head>
 
-<!-- ===== Le BODY est déclaré comme un foaf:Document ===== -->
 <body typeof="foaf:Document" about="https://amine-benhammada.github.io/">
 
   <a class="skip-link" href="#main" data-i18n="skip_link">Aller au contenu</a>
-
   <div class="bg-glow" aria-hidden="true"></div>
 
-  <!-- ===== Bouton de langue à position fixe =====
-       Ce sont de VRAIS liens (?lang=xx) : ils fournissent le paramètre GET, servent de
-       « liens vers les autres versions » dans le body, et fonctionnent même sans JavaScript.
-       Le contrôleur JS les intercepte pour un changement de langue fluide (sans rechargement). -->
   <nav id="lang-switch" class="lang-switch" data-i18n-attr="aria-label:lang_switch_label" aria-label="Changer de langue">
     <a class="lang-btn" data-lang="fr" href="?lang=fr" hreflang="fr" lang="fr"><span class="code">FR</span></a>
     <a class="lang-btn" data-lang="en" href="?lang=en" hreflang="en" lang="en"><span class="code">EN</span></a>
     <a class="lang-btn" data-lang="ar" href="?lang=ar" hreflang="ar" lang="ar"><span class="code">ع</span></a>
   </nav>
 
-  <div class="wrap">
+  <!-- ===================== HERO (pleine largeur) ===================== -->
+  <header class="hero" typeof="foaf:Person schema:Person" about="https://amine-benhammada.github.io/#me">
+    <div class="hero__inner">
+      <p class="kicker" data-i18n="kicker">Portfolio</p>
+      <h1 class="hero__name" property="foaf:name">
+        <span property="foaf:givenName">Ahmed Amine</span> <span class="hero__last" property="foaf:familyName">Benhammada</span>
+      </h1>
+      <p class="hero__role" property="schema:jobTitle" data-i18n="role">Apprenti ingénieur logiciel chez SFR · Étudiant ingénieur à Sup Galilée</p>
+      <p class="hero__bio" property="dc:description" data-i18n="bio">Ingénieur logiciel en alternance chez SFR (Altice France) et étudiant en cycle ingénieur à Sup Galilée. Développement fullstack, DevOps et supervision d'incidents critiques. Passionné de web sémantique, de design d'interfaces et de création 3D.</p>
 
-    <h1 class="kicker" data-i18n="kicker">Portfolio</h1>
+      <meta property="schema:knowsLanguage" content="ar" />
+      <meta property="schema:knowsLanguage" content="fr" />
+      <meta property="schema:knowsLanguage" content="en" />
 
-    <!-- ===== La PERSONNE : foaf:Person + schema:Person ===== -->
-    <main id="main" class="profile" typeof="foaf:Person schema:Person" about="https://amine-benhammada.github.io/#me">
+      <nav class="chips" aria-label="Contact">
+        <a class="chip" property="foaf:mbox" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr"><span data-i18n="contact_email">Email</span></a>
+        <a class="chip" property="foaf:phone" href="tel:+33623453854"><span data-i18n="contact_phone">Téléphone</span></a>
+        <a class="chip" property="foaf:account" href="https://www.linkedin.com/in/amine-benhammada-810843228/"><span data-i18n="contact_linkedin">LinkedIn</span></a>
+        <a class="chip" property="foaf:account" href="https://github.com/KESHRUD"><span data-i18n="contact_github">GitHub</span></a>
+        <a class="chip" property="foaf:homepage" href="https://3d-amine-benhammada-portfolio.vercel.app"><span data-i18n="contact_3d">Portfolio 3D</span></a>
+      </nav>
+      <p class="hero__loc" property="schema:address" typeof="schema:PostalAddress">
+        <span property="schema:addressLocality" data-i18n="location">Massy / Paris, France</span>
+      </p>
+    </div>
+  </header>
 
-      <header class="hero">
-        <h2 class="hero__name" property="foaf:name">
-          <span property="foaf:givenName">Ahmed Amine</span>
-          <span class="hero__last" property="foaf:familyName">Benhammada</span>
-        </h2>
-        <p class="hero__role" property="schema:jobTitle" data-i18n="role">Étudiant en informatique (alternant) à l'Institut Galilée</p>
-        <p class="hero__bio" property="dc:description" data-i18n="bio">Étudiant en informatique à l'Institut Galilée (Université Sorbonne Paris Nord), en alternance chez SFR. Je m'intéresse au développement web, au web sémantique et au design d'interfaces.</p>
+  <main id="main" class="container">
 
-        <meta property="schema:knowsLanguage" content="fr" />
-        <meta property="schema:knowsLanguage" content="en" />
-        <meta property="schema:knowsLanguage" content="ar" />
+    <!-- ===================== GRILLE CV ===================== -->
+    <div class="cv-grid">
 
-        <nav class="contact" aria-label="Coordonnées">
-          <a class="contact__link" property="foaf:mbox" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr" data-i18n="contact_email">Email</a>
-          <a class="contact__link" property="foaf:phone" href="tel:+33623453854" data-i18n="contact_phone">Téléphone</a>
-          <a class="contact__link" property="foaf:account" href="https://www.linkedin.com/in/amine-benhammada-810843228/" data-i18n="contact_linkedin">LinkedIn</a>
-          <a class="contact__link" property="foaf:schoolHomepage" href="https://galilee.univ-paris13.fr/" data-i18n="contact_school">Institut Galilée</a>
-        </nav>
-      </header>
+      <!-- ===== COLONNE PRINCIPALE ===== -->
+      <div class="cv-main" about="https://amine-benhammada.github.io/#me">
 
-      <!-- ===================== PROJETS ===================== -->
-      <section class="projects" aria-label="Projets">
-        <h3 class="section-head" data-i18n="projects_head">Projets</h3>
+        <!-- EXPÉRIENCE -->
+        <section class="block" aria-label="Expérience">
+          <h2 class="section-head" data-i18n="experience_head">Expérience</h2>
 
-        <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork" resource="https://amine-benhammada.github.io/#projet-tautologie">
-          <h4 class="card__title" property="dc:title" data-i18n="proj1_title">Implémentation de la tautologie en OCaml</h4>
-          <p class="card__desc" property="dc:description" data-i18n="proj1_desc">Implémentation d'un vérificateur de tautologie en OCaml, réalisée à l'Université Sorbonne Paris Nord.</p>
-          <p class="card__period"><span class="meta-key" data-i18n="label_period">Période</span> <span property="dc:date" data-i18n="proj1_period">Mars 2024 – Avril 2024</span></p>
-          <ul class="tags">
-            <li class="tag" property="dc:subject">OCaml</li>
-            <li class="tag" property="dc:subject">Algorithmes</li>
-          </ul>
-          <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/Tautologie"><span data-i18n="label_view_github">Voir sur GitHub</span> <span aria-hidden="true">→</span></a>
-        </article>
+          <article class="entry" property="schema:worksFor" typeof="schema:Organization">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="exp_sfr_role">Apprenti ingénieur logiciel</h3>
+              <span class="entry__date" data-i18n="exp_sfr_period">Sept. 2024 – Aujourd'hui</span>
+            </div>
+            <p class="entry__org"><span property="schema:name">SFR (Altice France)</span></p>
+            <p class="entry__desc" data-i18n="exp_sfr_desc">Direction des Systèmes d'Information — supervision Front Office B2C. Développement fullstack (Symfony 7, Angular 18, API Platform, PostgreSQL), gestion d'incidents critiques, MCO, observabilité, CI/CD et Agile Scrum.</p>
+            <ul class="tags">
+              <li class="tag">Symfony 7</li><li class="tag">Angular 18</li><li class="tag">API Platform</li><li class="tag">PostgreSQL</li><li class="tag">Docker</li><li class="tag">GitLab CI/CD</li><li class="tag">Grafana</li><li class="tag">Scrum</li>
+            </ul>
+          </article>
 
-        <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork" resource="https://amine-benhammada.github.io/#projet-octopunks">
-          <h4 class="card__title" property="dc:title" data-i18n="proj2_title">OCTOPUNKS — un clone d'EXAPUNKS</h4>
-          <p class="card__desc" property="dc:description" data-i18n="proj2_desc">Conception d'un clone d'EXAPUNKS, un jeu de programmation, à l'Université Sorbonne Paris Nord.</p>
-          <p class="card__period"><span class="meta-key" data-i18n="label_period">Période</span> <span property="dc:date" data-i18n="proj2_period">2024</span></p>
-          <ul class="tags">
-            <li class="tag" property="dc:subject">Java Swing</li>
-            <li class="tag" property="dc:subject">LaTeX</li>
-          </ul>
-          <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/OCTOPUNKS"><span data-i18n="label_view_github">Voir sur GitHub</span> <span aria-hidden="true">→</span></a>
-        </article>
+          <article class="entry">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="exp_leona_role">Cofondateur &amp; CTO</h3>
+              <span class="entry__date" data-i18n="exp_leona_period">Mai 2025 – Aujourd'hui</span>
+            </div>
+            <p class="entry__org">LEONA</p>
+            <p class="entry__desc" data-i18n="exp_leona_desc">Marque de mode célébrant l'habit traditionnel féminin algérien. Conception et développement de la boutique en ligne (MERN), inventaire/paiement/analytics, UI/UX Figma et visuels 3D Blender.</p>
+            <ul class="tags">
+              <li class="tag">MongoDB</li><li class="tag">Express</li><li class="tag">React</li><li class="tag">Node.js</li><li class="tag">Figma</li><li class="tag">Blender</li>
+            </ul>
+          </article>
 
-        <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork" resource="https://amine-benhammada.github.io/#projet-client-serveur">
-          <h4 class="card__title" property="dc:title" data-i18n="proj3_title">Application client-serveur en langage C</h4>
-          <p class="card__desc" property="dc:description" data-i18n="proj3_desc">Conception et développement d'une application client-serveur en langage C à l'Université Sorbonne Paris Nord.</p>
-          <ul class="tags">
-            <li class="tag" property="dc:subject">Protocole TCP</li>
-            <li class="tag" property="dc:subject">Threads</li>
-          </ul>
-        </article>
+          <article class="entry">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="exp_231_role">Équipier polyvalent</h3>
+              <span class="entry__date" data-i18n="exp_231_period">Déc. 2022 – Juil. 2024</span>
+            </div>
+            <p class="entry__org">231 East Street</p>
+            <p class="entry__desc" data-i18n="exp_231_desc">Service client en restauration rapide, préparation selon les standards, formation professionnelle en service. Travail d'équipe et efficacité sous pression.</p>
+          </article>
 
-        <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork" resource="https://amine-benhammada.github.io/#projet-unification">
-          <h4 class="card__title" property="dc:title" data-i18n="proj4_title">Algorithme d'unification en OCaml</h4>
-          <p class="card__desc" property="dc:description" data-i18n="proj4_desc">Traduction d'un algorithme logique d'unification en langage OCaml, à l'Université Sorbonne Paris Nord.</p>
-          <ul class="tags">
-            <li class="tag" property="dc:subject">OCaml</li>
-            <li class="tag" property="dc:subject">LaTeX</li>
-          </ul>
-        </article>
+          <article class="entry">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="exp_fiverr_role">Designer &amp; monteur vidéo freelance</h3>
+              <span class="entry__date" data-i18n="exp_fiverr_period">2016 – 2021</span>
+            </div>
+            <p class="entry__org">Fiverr · 777artz</p>
+            <p class="entry__desc" data-i18n="exp_fiverr_desc">Création de contenus visuels et montage vidéo pour des clients internationaux. Gestion autonome des projets, du concept à la livraison.</p>
+            <ul class="tags">
+              <li class="tag">Photoshop</li><li class="tag">After Effects</li><li class="tag">Premiere Pro</li><li class="tag">Illustrator</li>
+            </ul>
+          </article>
+        </section>
 
-        <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork" resource="https://amine-benhammada.github.io/#projet-sac-a-dos">
-          <h4 class="card__title" property="dc:title" data-i18n="proj5_title">Problème du sac à dos 0/1 en C / Python</h4>
-          <p class="card__desc" property="dc:description" data-i18n="proj5_desc">Conception et analyse d'algorithmes (backtracking, programmation dynamique, approche gloutonne) pour résoudre le problème du sac à dos 0/1.</p>
-          <ul class="tags">
-            <li class="tag" property="dc:subject">Analyse de complexité</li>
-            <li class="tag" property="dc:subject">Langage C</li>
-            <li class="tag" property="dc:subject">Python</li>
-          </ul>
-        </article>
-      </section>
+        <!-- FORMATION -->
+        <section class="block" aria-label="Formation">
+          <h2 class="section-head" data-i18n="education_head">Formation</h2>
 
-      <!-- ===================== COMPÉTENCES ===================== -->
-      <section class="skills" aria-label="Compétences">
-        <h3 class="section-head" data-i18n="skills_head">Compétences</h3>
-        <div class="skill-grid">
-          <div class="skill-card">
-            <h4 data-i18n="skills_cat_langs">Langages</h4>
-            <ul><li>OCaml</li><li>C</li><li>Python</li><li>Java</li><li>JavaScript</li></ul>
+          <article class="entry" property="schema:alumniOf" typeof="schema:CollegeOrUniversity">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="edu_master_title">Diplôme d'ingénieur en informatique (Master)</h3>
+              <span class="entry__date" data-i18n="edu_master_period">2024 – Aujourd'hui</span>
+            </div>
+            <p class="entry__org"><span property="schema:name" data-i18n="edu_master_org">Sup Galilée — Université Sorbonne Paris Nord</span></p>
+          </article>
+
+          <article class="entry" property="schema:alumniOf" typeof="schema:CollegeOrUniversity">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="edu_bachelor_title">Licence en informatique</h3>
+              <span class="entry__date" data-i18n="edu_bachelor_period">2021 – 2024</span>
+            </div>
+            <p class="entry__org"><span property="schema:name" data-i18n="edu_bachelor_org">Institut Galilée — Université Sorbonne Paris Nord</span></p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="edu_pharma_title">1re année de Pharmacie</h3>
+              <span class="entry__date" data-i18n="edu_pharma_period">2020 – 2021</span>
+            </div>
+            <p class="entry__org" data-i18n="edu_pharma_org">Faculté de médecine — Université Ferhat Abbas, Sétif</p>
+          </article>
+
+          <article class="entry">
+            <div class="entry__top">
+              <h3 class="entry__role" data-i18n="edu_bac_title">Baccalauréat scientifique — mention très bien</h3>
+              <span class="entry__date" data-i18n="edu_bac_period">2019 – 2020</span>
+            </div>
+            <p class="entry__org" data-i18n="edu_bac_org">Lycée Malek Bennabi, Sétif</p>
+          </article>
+        </section>
+
+        <!-- PROJETS -->
+        <section class="block" aria-label="Projets">
+          <h2 class="section-head" data-i18n="projects_head">Projets</h2>
+          <div class="cards">
+            <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork">
+              <h3 class="card__title" property="dc:title" data-i18n="proj_3d_title">Portfolio 3D interactif</h3>
+              <p class="card__desc" property="dc:description" data-i18n="proj_3d_desc">Portfolio entièrement interactif construit avec React, TypeScript et Three.js.</p>
+              <ul class="tags"><li class="tag">React</li><li class="tag">TypeScript</li><li class="tag">Three.js</li></ul>
+              <a class="card__link" property="foaf:homepage" href="https://3d-amine-benhammada-portfolio.vercel.app"><span data-i18n="label_demo">Démo en ligne</span> <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork">
+              <h3 class="card__title" property="dc:title" data-i18n="proj_galileolab_title">GalileoLab — dessin collaboratif</h3>
+              <p class="card__desc" property="dc:description" data-i18n="proj_galileolab_desc">Application web de dessin collaboratif en temps réel (PHP, JavaScript, WebSockets, Canvas API).</p>
+              <ul class="tags"><li class="tag">PHP</li><li class="tag">WebSockets</li><li class="tag">Canvas API</li></ul>
+            </article>
+
+            <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork">
+              <h3 class="card__title" property="dc:title" data-i18n="proj_octopunks_title">OCTOPUNKS — clone d'EXAPUNKS</h3>
+              <p class="card__desc" property="dc:description" data-i18n="proj_octopunks_desc">Clone du jeu de programmation EXAPUNKS en Java Swing.</p>
+              <ul class="tags"><li class="tag">Java Swing</li><li class="tag">LaTeX</li></ul>
+              <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/OCTOPUNKS"><span data-i18n="label_view_github">Voir sur GitHub</span> <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork">
+              <h3 class="card__title" property="dc:title" data-i18n="proj_ocaml_title">Projets OCaml — tautologie &amp; unification</h3>
+              <p class="card__desc" property="dc:description" data-i18n="proj_ocaml_desc">Vérificateur de tautologie et algorithme d'unification implémentés en OCaml.</p>
+              <ul class="tags"><li class="tag">OCaml</li></ul>
+              <a class="card__link" property="foaf:homepage" href="https://github.com/KESHRUD/Tautologie"><span data-i18n="label_view_github">Voir sur GitHub</span> <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="card" property="foaf:made" typeof="foaf:Project schema:CreativeWork">
+              <h3 class="card__title" property="dc:title" data-i18n="proj_cs_title">Applications client-serveur en C</h3>
+              <p class="card__desc" property="dc:description" data-i18n="proj_cs_desc">Applications client-serveur en C (protocole TCP, threads).</p>
+              <ul class="tags"><li class="tag">C</li><li class="tag">TCP</li><li class="tag">Threads</li></ul>
+            </article>
           </div>
-          <div class="skill-card">
-            <h4 data-i18n="skills_cat_web">Web &amp; sémantique</h4>
-            <ul><li>HTML5 / CSS3</li><li>RDFa</li><li>FOAF / Dublin Core</li><li>schema.org</li></ul>
-          </div>
-          <div class="skill-card">
-            <h4 data-i18n="skills_cat_tools">Outils</h4>
-            <ul><li>Git / GitHub</li><li>Linux</li><li>LaTeX</li></ul>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ===================== VIDÉO (version selon la langue) ===================== -->
-      <section class="video" aria-label="Vidéo">
-        <h3 class="section-head" data-i18n="video_head">Vidéo</h3>
-        <!-- Vidéos sur le Web sémantique, une par langue. Le contrôleur choisit la source
-             selon la langue active (data-yt-fr / data-yt-en / data-yt-ar).
-             FR : « C'est quoi le web sémantique »  ·  EN : « Introduction to Semantic Web and
-             Linked Data »  ·  AR : « ما هو الـ Semantic Web ». -->
-        <div class="video-frame"
-             id="video-frame"
-             data-yt-fr="7HyTvzbZf1I"
-             data-yt-en="KDMEes_syjE"
-             data-yt-ar="7woIU-v-eU4">
+      </div>
+
+      <!-- ===== COLONNE LATÉRALE ===== -->
+      <aside class="cv-aside">
+
+        <!-- LANGUES -->
+        <section class="panel" aria-label="Langues">
+          <h2 class="panel-head" data-i18n="languages_head">Langues</h2>
+          <ul class="plain">
+            <li data-i18n="lang_ar">Arabe — langue maternelle</li>
+            <li data-i18n="lang_fr">Français — C2</li>
+            <li data-i18n="lang_en">Anglais — C1</li>
+          </ul>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section class="panel" aria-label="Compétences">
+          <h2 class="panel-head" data-i18n="skills_head">Compétences</h2>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_prog">Langages</h3>
+            <ul class="tags"><li class="tag">JavaScript</li><li class="tag">TypeScript</li><li class="tag">Python</li><li class="tag">Java</li><li class="tag">C</li><li class="tag">C++</li><li class="tag">PHP</li><li class="tag">OCaml</li><li class="tag">Prolog</li><li class="tag">SQL</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_frame">Frameworks &amp; Web</h3>
+            <ul class="tags"><li class="tag">Angular</li><li class="tag">React</li><li class="tag">Node.js</li><li class="tag">Express</li><li class="tag">Symfony</li><li class="tag">API Platform</li><li class="tag">Tailwind</li><li class="tag">HTML5/CSS3</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_devops">DevOps &amp; Cloud</h3>
+            <ul class="tags"><li class="tag">Docker</li><li class="tag">Kubernetes</li><li class="tag">GitLab CI/CD</li><li class="tag">Jenkins</li><li class="tag">AWS</li><li class="tag">Prometheus</li><li class="tag">Grafana</li><li class="tag">ELK</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_data">Bases de données</h3>
+            <ul class="tags"><li class="tag">PostgreSQL</li><li class="tag">MySQL</li><li class="tag">MongoDB</li><li class="tag">Supabase</li><li class="tag">Kafka</li><li class="tag">Airflow</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_sec">Sécurité &amp; Auth</h3>
+            <ul class="tags"><li class="tag">OAuth2 / OIDC</li><li class="tag">JWT</li><li class="tag">Keycloak</li><li class="tag">RBAC</li><li class="tag">OWASP</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_design">Design &amp; 3D</h3>
+            <ul class="tags"><li class="tag">Figma</li><li class="tag">Blender</li><li class="tag">Photoshop</li><li class="tag">After Effects</li><li class="tag">DaVinci Resolve</li></ul>
+          </div>
+          <div class="skillset">
+            <h3 class="skillset__cat" data-i18n="skills_cat_ws">Web sémantique</h3>
+            <ul class="tags"><li class="tag">RDFa</li><li class="tag">FOAF</li><li class="tag">Dublin Core</li><li class="tag">schema.org</li><li class="tag">XML / TMX</li><li class="tag">DTD</li></ul>
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="panel" aria-label="Certifications">
+          <h2 class="panel-head" data-i18n="certs_head">Certifications</h2>
+          <ul class="plain">
+            <li>freeCodeCamp — Responsive Web Design (2024)</li>
+            <li>AWS — Cloud Computing Essentials (2025)</li>
+            <li>AWS — Cloud First Steps (2025)</li>
+            <li>AWS — Generative AI badge (2025)</li>
+            <li>AWS Cloud Quest: Cloud Practitioner — in progress</li>
+            <li>Oracle — OCI Developer Professional — in progress</li>
+          </ul>
+        </section>
+
+        <!-- DISTINCTIONS -->
+        <section class="panel" aria-label="Distinctions">
+          <h2 class="panel-head" data-i18n="awards_head">Distinctions</h2>
+          <ul class="plain">
+            <li data-i18n="award_hackathon">Finaliste hackathon Isograd — 32e sur 498</li>
+            <li data-i18n="award_volley_idf">Champion de volley-ball d'Île-de-France (×2) — FFSU</li>
+            <li data-i18n="award_volley_dz">Vainqueur de la Coupe d'Algérie de volley-ball (×2)</li>
+          </ul>
+        </section>
+
+        <!-- CENTRES D'INTÉRÊT -->
+        <section class="panel" aria-label="Centres d'intérêt">
+          <h2 class="panel-head" data-i18n="hobbies_head">Centres d'intérêt</h2>
+          <ul class="plain">
+            <li data-i18n="hobby_volley">Volley-ball — joueur de niveau international</li>
+            <li data-i18n="hobby_longboard">Longboard dancing &amp; freestyle</li>
+            <li data-i18n="hobby_camping">Camping &amp; randonnée — 5 pays en solo</li>
+            <li data-i18n="hobby_photo">Photographie &amp; réalisation vidéo</li>
+          </ul>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===================== WEB SÉMANTIQUE (section séparée, pleine largeur) ===================== -->
+  <section class="ws-band" aria-label="Web sémantique">
+    <div class="container">
+      <h2 class="ws-head" data-i18n="ws_head">Web sémantique — Travaux du cours</h2>
+      <p class="ws-intro" data-i18n="ws_intro">Cette partie regroupe mes travaux du cours de Web sémantique, distincte de mon expérience professionnelle. Ce portfolio lui-même en est la pièce maîtresse : multilingue et annoté sémantiquement.</p>
+
+      <div class="cards">
+        <article class="card card--ws">
+          <h3 class="card__title" data-i18n="ws_portfolio_title">Ce portfolio multilingue (RDFa + TMX)</h3>
+          <p class="card__desc" data-i18n="ws_portfolio_desc">Site en 3 langues (FR/EN/AR, arabe en RTL), contenu en XML (TMX 1.4), détection de langue, liens hreflang et annotations RDFa : Dublin Core, FOAF et schema.org.</p>
+          <ul class="tags"><li class="tag">XML / TMX 1.4</li><li class="tag">RDFa</li><li class="tag">hreflang</li><li class="tag">RTL</li></ul>
+        </article>
+
+        <article class="card card--ws">
+          <h3 class="card__title" data-i18n="ws_tp1_title">TP1 — XML &amp; DTD</h3>
+          <p class="card__desc" data-i18n="ws_tp1_desc">Modélisation d'une forêt et de ses arbres en XML, validée par une DTD. Manipulation des concepts de base du XML structuré.</p>
+          <ul class="tags"><li class="tag">XML</li><li class="tag">DTD</li></ul>
+          <a class="card__link" href="tp1/bon.xml"><span data-i18n="label_view_github">Voir les fichiers</span> <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card card--ws">
+          <h3 class="card__title" data-i18n="ws_rdfa_title">Annotation sémantique (RDFa)</h3>
+          <p class="card__desc" data-i18n="ws_rdfa_desc">Exposition des données de la page (auteur, projets, formation) sous forme de triplets RDF lisibles par les machines, via Dublin Core, FOAF et schema.org.</p>
+          <ul class="tags"><li class="tag">Dublin Core</li><li class="tag">FOAF</li><li class="tag">schema.org</li><li class="tag">JSON-LD</li></ul>
+        </article>
+      </div>
+
+      <!-- VIDÉO (version selon la langue) -->
+      <div class="ws-video">
+        <h3 class="panel-head" data-i18n="video_head">Vidéo</h3>
+        <div class="video-frame" id="video-frame"
+             data-yt-fr="7HyTvzbZf1I" data-yt-en="KDMEes_syjE" data-yt-ar="7woIU-v-eU4">
           <iframe id="video-iframe"
                   src="https://www.youtube-nocookie.com/embed/7HyTvzbZf1I"
-                  title="Vidéo sur le Web sémantique"
-                  loading="lazy"
+                  title="Vidéo sur le Web sémantique" loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen="allowfullscreen"></iframe>
         </div>
         <p class="caption" data-i18n="video_caption">La version affichée correspond à la langue active du site.</p>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- ===================== CONTACT ===================== -->
-      <section class="contact-section" aria-label="Contact">
-        <h3 class="section-head" data-i18n="contact_head">Contact</h3>
-        <p class="contact-intro" data-i18n="contact_intro">N'hésitez pas à me contacter pour un projet, une alternance ou une collaboration.</p>
-        <div class="contact-actions">
-          <a class="btn" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr" data-i18n="contact_email">Email</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/amine-benhammada-810843228/" rel="me noopener" data-i18n="contact_linkedin">LinkedIn</a>
-        </div>
-      </section>
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact-band" aria-label="Contact">
+    <div class="container">
+      <h2 class="section-head" data-i18n="contact_head">Contact</h2>
+      <p class="contact-intro" data-i18n="contact_intro">Disponible pour des projets, des collaborations ou des opportunités. N'hésitez pas à me contacter.</p>
+      <div class="contact-actions">
+        <a class="btn" href="mailto:ahmedamine.benhammada@edu.univ-paris13.fr" data-i18n="contact_email">Email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/amine-benhammada-810843228/" rel="me noopener" data-i18n="contact_linkedin">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/KESHRUD" rel="me noopener" data-i18n="contact_github">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    </main>
-
-    <footer class="foot">
+  <footer class="foot">
+    <div class="container foot__inner">
       <span data-i18n="footer_note">Site multilingue (FR / EN / AR) — HTML5 + XHTML valide, annoté en RDFa.</span>
       <span>© 2026 Ahmed Amine Benhammada</span>
-    </footer>
+    </div>
+  </footer>
 
-  </div>
-
-  <!-- Contrôleur : résolution de langue + lecture du XML + rendu -->
   <script src="assets/js/controller.js"></script>
 </body>
 </html>

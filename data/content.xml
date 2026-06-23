@@ -1,229 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Source de données multilingue du portfolio (format TMX 1.4).
+  Chaque <tu tuid="id"> contient une variante <tuv xml:lang="..."> par langue.
+  Les noms techniques / noms propres (SFR, Docker, PostgreSQL…) restent universels
+  et ne sont pas traduits : ils n'ont pas de bloc <tu> ici.
+-->
 <tmx version="1.4">
-  <header
-      creationtool="portfolio-benhammada"
-      creationtoolversion="1.0"
-      datatype="PlainText"
-      segtype="block"
-      adminlang="fr"
-      srclang="fr"
-      o-tmf="custom"/>
+  <header creationtool="portfolio-benhammada" creationtoolversion="2.0"
+          datatype="PlainText" segtype="block" adminlang="fr" srclang="fr" o-tmf="custom"/>
   <body>
 
-    <!-- ===================== MÉTA-DONNÉES DU DOCUMENT ===================== -->
+    <!-- ===================== MÉTA ===================== -->
     <tu tuid="meta_title">
       <tuv xml:lang="fr"><seg>Portfolio — Ahmed Amine Benhammada</seg></tuv>
       <tuv xml:lang="en"><seg>Portfolio — Ahmed Amine Benhammada</seg></tuv>
       <tuv xml:lang="ar"><seg>ملف الأعمال — أحمد أمين بن حمادة</seg></tuv>
     </tu>
     <tu tuid="meta_description">
-      <tuv xml:lang="fr"><seg>Portfolio multilingue d'Ahmed Amine Benhammada, étudiant en informatique à l'Institut Galilée, annoté en RDFa (Dublin Core, FOAF, schema.org).</seg></tuv>
-      <tuv xml:lang="en"><seg>Multilingual portfolio of Ahmed Amine Benhammada, computer science student at Institut Galilée, annotated with RDFa (Dublin Core, FOAF, schema.org).</seg></tuv>
-      <tuv xml:lang="ar"><seg>ملف أعمال متعدد اللغات لأحمد أمين بن حمادة، طالب في علوم الحاسوب بمعهد غاليليه، موصوف دلاليًا بتقنية RDFa.</seg></tuv>
+      <tuv xml:lang="fr"><seg>Portfolio multilingue d'Ahmed Amine Benhammada — apprenti ingénieur logiciel chez SFR, étudiant à Sup Galilée. Annoté en RDFa (Dublin Core, FOAF, schema.org).</seg></tuv>
+      <tuv xml:lang="en"><seg>Multilingual portfolio of Ahmed Amine Benhammada — software engineering apprentice at SFR, student at Sup Galilée. Annotated with RDFa (Dublin Core, FOAF, schema.org).</seg></tuv>
+      <tuv xml:lang="ar"><seg>ملف أعمال متعدد اللغات لأحمد أمين بن حمادة — مهندس برمجيات متدرّب في SFR وطالب في معهد غاليليه. موصوف بتقنية RDFa.</seg></tuv>
     </tu>
     <tu tuid="meta_subject">
-      <tuv xml:lang="fr"><seg>Portfolio, Web sémantique, RDFa, FOAF, Dublin Core, schema.org, Développement web</seg></tuv>
-      <tuv xml:lang="en"><seg>Portfolio, Semantic Web, RDFa, FOAF, Dublin Core, schema.org, Web development</seg></tuv>
-      <tuv xml:lang="ar"><seg>ملف أعمال، الويب الدلالي، RDFa، FOAF، Dublin Core، schema.org، تطوير الويب</seg></tuv>
+      <tuv xml:lang="fr"><seg>Portfolio, Ingénierie logicielle, Web sémantique, RDFa, FOAF, Dublin Core, schema.org, Développement web</seg></tuv>
+      <tuv xml:lang="en"><seg>Portfolio, Software engineering, Semantic Web, RDFa, FOAF, Dublin Core, schema.org, Web development</seg></tuv>
+      <tuv xml:lang="ar"><seg>ملف أعمال، هندسة البرمجيات، الويب الدلالي، RDFa، FOAF، Dublin Core، schema.org، تطوير الويب</seg></tuv>
     </tu>
 
-    <!-- ===================== EN-TÊTE / HERO ===================== -->
+    <!-- ===================== HERO ===================== -->
     <tu tuid="kicker">
       <tuv xml:lang="fr"><seg>Portfolio</seg></tuv>
       <tuv xml:lang="en"><seg>Portfolio</seg></tuv>
       <tuv xml:lang="ar"><seg>ملف الأعمال</seg></tuv>
     </tu>
     <tu tuid="role">
-      <tuv xml:lang="fr"><seg>Étudiant en informatique (alternant) à l'Institut Galilée</seg></tuv>
-      <tuv xml:lang="en"><seg>Computer science student (work-study) at Institut Galilée</seg></tuv>
-      <tuv xml:lang="ar"><seg>طالب في علوم الحاسوب (بنظام التكوين بالتناوب) بمعهد غاليليه</seg></tuv>
+      <tuv xml:lang="fr"><seg>Apprenti ingénieur logiciel chez SFR · Étudiant ingénieur à Sup Galilée</seg></tuv>
+      <tuv xml:lang="en"><seg>Software Engineering Apprentice at SFR · Engineering student at Sup Galilée</seg></tuv>
+      <tuv xml:lang="ar"><seg>مهندس برمجيات متدرّب في SFR · طالب هندسة في معهد غاليليه</seg></tuv>
     </tu>
     <tu tuid="bio">
-      <tuv xml:lang="fr"><seg>Étudiant en informatique à l'Institut Galilée (Université Sorbonne Paris Nord), en alternance chez SFR. Je m'intéresse au développement web, au web sémantique et au design d'interfaces.</seg></tuv>
-      <tuv xml:lang="en"><seg>Computer science student at Institut Galilée (Université Sorbonne Paris Nord), in a work-study program at SFR. I am interested in web development, the semantic web and interface design.</seg></tuv>
-      <tuv xml:lang="ar"><seg>طالب في علوم الحاسوب بمعهد غاليليه (جامعة السوربون باريس الشمالية)، أعمل بنظام التكوين بالتناوب في شركة SFR. أهتمّ بتطوير الويب والويب الدلالي وتصميم الواجهات.</seg></tuv>
+      <tuv xml:lang="fr"><seg>Ingénieur logiciel en alternance chez SFR (Altice France) et étudiant en cycle ingénieur à Sup Galilée (Université Sorbonne Paris Nord). Développement fullstack, DevOps et supervision d'incidents critiques. Passionné de web sémantique, de design d'interfaces et de création 3D.</seg></tuv>
+      <tuv xml:lang="en"><seg>Software engineering apprentice at SFR (Altice France) and engineering student at Sup Galilée (Université Sorbonne Paris Nord). Fullstack development, DevOps and critical-incident supervision. Passionate about the semantic web, interface design and 3D creation.</seg></tuv>
+      <tuv xml:lang="ar"><seg>مهندس برمجيات بنظام التكوين بالتناوب في SFR (Altice France) وطالب هندسة في معهد غاليليه (جامعة السوربون باريس الشمالية). تطوير متكامل (Fullstack) وDevOps وإشراف على الحوادث الحرجة. شغوف بالويب الدلالي وتصميم الواجهات والتصميم ثلاثي الأبعاد.</seg></tuv>
+    </tu>
+    <tu tuid="location">
+      <tuv xml:lang="fr"><seg>Massy / Paris, France</seg></tuv>
+      <tuv xml:lang="en"><seg>Massy / Paris, France</seg></tuv>
+      <tuv xml:lang="ar"><seg>ماسي / باريس، فرنسا</seg></tuv>
     </tu>
 
     <!-- ===================== CONTACT ===================== -->
-    <tu tuid="contact_email">
-      <tuv xml:lang="fr"><seg>Email</seg></tuv>
-      <tuv xml:lang="en"><seg>Email</seg></tuv>
-      <tuv xml:lang="ar"><seg>البريد الإلكتروني</seg></tuv>
-    </tu>
-    <tu tuid="contact_phone">
-      <tuv xml:lang="fr"><seg>Téléphone</seg></tuv>
-      <tuv xml:lang="en"><seg>Phone</seg></tuv>
-      <tuv xml:lang="ar"><seg>الهاتف</seg></tuv>
-    </tu>
-    <tu tuid="contact_portfolio">
-      <tuv xml:lang="fr"><seg>Portfolio</seg></tuv>
-      <tuv xml:lang="en"><seg>Portfolio</seg></tuv>
-      <tuv xml:lang="ar"><seg>الموقع</seg></tuv>
-    </tu>
-    <tu tuid="contact_linkedin">
-      <tuv xml:lang="fr"><seg>LinkedIn</seg></tuv>
-      <tuv xml:lang="en"><seg>LinkedIn</seg></tuv>
-      <tuv xml:lang="ar"><seg>لينكدإن</seg></tuv>
-    </tu>
-    <tu tuid="contact_school">
-      <tuv xml:lang="fr"><seg>Institut Galilée</seg></tuv>
-      <tuv xml:lang="en"><seg>Institut Galilée</seg></tuv>
-      <tuv xml:lang="ar"><seg>معهد غاليليه</seg></tuv>
-    </tu>
+    <tu tuid="contact_email"><tuv xml:lang="fr"><seg>Email</seg></tuv><tuv xml:lang="en"><seg>Email</seg></tuv><tuv xml:lang="ar"><seg>البريد الإلكتروني</seg></tuv></tu>
+    <tu tuid="contact_phone"><tuv xml:lang="fr"><seg>Téléphone</seg></tuv><tuv xml:lang="en"><seg>Phone</seg></tuv><tuv xml:lang="ar"><seg>الهاتف</seg></tuv></tu>
+    <tu tuid="contact_linkedin"><tuv xml:lang="fr"><seg>LinkedIn</seg></tuv><tuv xml:lang="en"><seg>LinkedIn</seg></tuv><tuv xml:lang="ar"><seg>لينكدإن</seg></tuv></tu>
+    <tu tuid="contact_github"><tuv xml:lang="fr"><seg>GitHub</seg></tuv><tuv xml:lang="en"><seg>GitHub</seg></tuv><tuv xml:lang="ar"><seg>غيت‑هَب</seg></tuv></tu>
+    <tu tuid="contact_3d"><tuv xml:lang="fr"><seg>Portfolio 3D</seg></tuv><tuv xml:lang="en"><seg>3D Portfolio</seg></tuv><tuv xml:lang="ar"><seg>ملف الأعمال ثلاثي الأبعاد</seg></tuv></tu>
 
     <!-- ===================== TITRES DE SECTION ===================== -->
-    <tu tuid="projects_head">
-      <tuv xml:lang="fr"><seg>Projets</seg></tuv>
-      <tuv xml:lang="en"><seg>Projects</seg></tuv>
-      <tuv xml:lang="ar"><seg>المشاريع</seg></tuv>
-    </tu>
-    <tu tuid="skills_head">
-      <tuv xml:lang="fr"><seg>Compétences</seg></tuv>
-      <tuv xml:lang="en"><seg>Skills</seg></tuv>
-      <tuv xml:lang="ar"><seg>المهارات</seg></tuv>
-    </tu>
-    <tu tuid="video_head">
-      <tuv xml:lang="fr"><seg>Vidéo</seg></tuv>
-      <tuv xml:lang="en"><seg>Video</seg></tuv>
-      <tuv xml:lang="ar"><seg>الفيديو</seg></tuv>
-    </tu>
-    <tu tuid="contact_head">
-      <tuv xml:lang="fr"><seg>Contact</seg></tuv>
-      <tuv xml:lang="en"><seg>Contact</seg></tuv>
-      <tuv xml:lang="ar"><seg>تواصل</seg></tuv>
+    <tu tuid="about_head"><tuv xml:lang="fr"><seg>Profil</seg></tuv><tuv xml:lang="en"><seg>About</seg></tuv><tuv xml:lang="ar"><seg>نبذة</seg></tuv></tu>
+    <tu tuid="experience_head"><tuv xml:lang="fr"><seg>Expérience</seg></tuv><tuv xml:lang="en"><seg>Experience</seg></tuv><tuv xml:lang="ar"><seg>الخبرة المهنية</seg></tuv></tu>
+    <tu tuid="education_head"><tuv xml:lang="fr"><seg>Formation</seg></tuv><tuv xml:lang="en"><seg>Education</seg></tuv><tuv xml:lang="ar"><seg>التعليم والتكوين</seg></tuv></tu>
+    <tu tuid="projects_head"><tuv xml:lang="fr"><seg>Projets</seg></tuv><tuv xml:lang="en"><seg>Projects</seg></tuv><tuv xml:lang="ar"><seg>المشاريع</seg></tuv></tu>
+    <tu tuid="skills_head"><tuv xml:lang="fr"><seg>Compétences</seg></tuv><tuv xml:lang="en"><seg>Skills</seg></tuv><tuv xml:lang="ar"><seg>المهارات</seg></tuv></tu>
+    <tu tuid="languages_head"><tuv xml:lang="fr"><seg>Langues</seg></tuv><tuv xml:lang="en"><seg>Languages</seg></tuv><tuv xml:lang="ar"><seg>اللغات</seg></tuv></tu>
+    <tu tuid="certs_head"><tuv xml:lang="fr"><seg>Certifications</seg></tuv><tuv xml:lang="en"><seg>Certifications</seg></tuv><tuv xml:lang="ar"><seg>الشهادات</seg></tuv></tu>
+    <tu tuid="awards_head"><tuv xml:lang="fr"><seg>Distinctions</seg></tuv><tuv xml:lang="en"><seg>Honors &amp; Awards</seg></tuv><tuv xml:lang="ar"><seg>الجوائز والتكريمات</seg></tuv></tu>
+    <tu tuid="hobbies_head"><tuv xml:lang="fr"><seg>Centres d'intérêt</seg></tuv><tuv xml:lang="en"><seg>Interests</seg></tuv><tuv xml:lang="ar"><seg>الاهتمامات</seg></tuv></tu>
+    <tu tuid="ws_head"><tuv xml:lang="fr"><seg>Web sémantique — Travaux du cours</seg></tuv><tuv xml:lang="en"><seg>Semantic Web — Course work</seg></tuv><tuv xml:lang="ar"><seg>الويب الدلالي — أعمال المقرّر</seg></tuv></tu>
+    <tu tuid="video_head"><tuv xml:lang="fr"><seg>Vidéo</seg></tuv><tuv xml:lang="en"><seg>Video</seg></tuv><tuv xml:lang="ar"><seg>الفيديو</seg></tuv></tu>
+    <tu tuid="contact_head"><tuv xml:lang="fr"><seg>Contact</seg></tuv><tuv xml:lang="en"><seg>Contact</seg></tuv><tuv xml:lang="ar"><seg>تواصل</seg></tuv></tu>
+
+    <!-- ===================== LABELS ===================== -->
+    <tu tuid="label_period"><tuv xml:lang="fr"><seg>Période</seg></tuv><tuv xml:lang="en"><seg>Period</seg></tuv><tuv xml:lang="ar"><seg>الفترة</seg></tuv></tu>
+    <tu tuid="label_present"><tuv xml:lang="fr"><seg>Aujourd'hui</seg></tuv><tuv xml:lang="en"><seg>Present</seg></tuv><tuv xml:lang="ar"><seg>حتى الآن</seg></tuv></tu>
+    <tu tuid="label_view_github"><tuv xml:lang="fr"><seg>Voir sur GitHub</seg></tuv><tuv xml:lang="en"><seg>View on GitHub</seg></tuv><tuv xml:lang="ar"><seg>عرض على GitHub</seg></tuv></tu>
+    <tu tuid="label_demo"><tuv xml:lang="fr"><seg>Démo en ligne</seg></tuv><tuv xml:lang="en"><seg>Live demo</seg></tuv><tuv xml:lang="ar"><seg>عرض مباشر</seg></tuv></tu>
+
+    <!-- ===================== EXPÉRIENCE : SFR ===================== -->
+    <tu tuid="exp_sfr_role"><tuv xml:lang="fr"><seg>Apprenti ingénieur logiciel</seg></tuv><tuv xml:lang="en"><seg>Software Engineer Apprentice</seg></tuv><tuv xml:lang="ar"><seg>مهندس برمجيات متدرّب</seg></tuv></tu>
+    <tu tuid="exp_sfr_period"><tuv xml:lang="fr"><seg>Sept. 2024 – Aujourd'hui</seg></tuv><tuv xml:lang="en"><seg>Sept. 2024 – Present</seg></tuv><tuv xml:lang="ar"><seg>سبتمبر 2024 – حتى الآن</seg></tuv></tu>
+    <tu tuid="exp_sfr_desc">
+      <tuv xml:lang="fr"><seg>Direction des Systèmes d'Information (DSI) — supervision Front Office B2C. Développement fullstack (Symfony 7, Angular 18, API Platform, PostgreSQL), migration d'un legacy Zend/PHP, gestion d'incidents critiques (&gt; 2000/mois), MCO N2/N3, observabilité (Prometheus, Grafana, ELK), CI/CD GitLab + Docker, tests (PHPUnit, Cypress) en TDD, et méthode Agile Scrum.</seg></tuv>
+      <tuv xml:lang="en"><seg>Information Systems Directorate (DSI) — B2C Front Office supervision. Fullstack development (Symfony 7, Angular 18, API Platform, PostgreSQL), migration of a legacy Zend/PHP system, critical-incident management (&gt; 2000/month), N2/N3 maintenance, observability (Prometheus, Grafana, ELK), GitLab + Docker CI/CD, testing (PHPUnit, Cypress) with TDD, and Agile Scrum.</seg></tuv>
+      <tuv xml:lang="ar"><seg>إدارة نظم المعلومات (DSI) — الإشراف على الواجهة الأمامية B2C. تطوير متكامل (Symfony 7، Angular 18، API Platform، PostgreSQL)، ترحيل نظام قديم Zend/PHP، إدارة الحوادث الحرجة (أكثر من 2000 شهريًا)، صيانة N2/N3، المراقبة (Prometheus، Grafana، ELK)، CI/CD عبر GitLab وDocker، اختبارات (PHPUnit، Cypress) بنهج TDD، ومنهجية Agile Scrum.</seg></tuv>
     </tu>
 
-    <!-- ===================== LABEL « période » ===================== -->
-    <tu tuid="label_period">
-      <tuv xml:lang="fr"><seg>Période</seg></tuv>
-      <tuv xml:lang="en"><seg>Period</seg></tuv>
-      <tuv xml:lang="ar"><seg>الفترة</seg></tuv>
-    </tu>
-    <tu tuid="label_view_github">
-      <tuv xml:lang="fr"><seg>Voir sur GitHub</seg></tuv>
-      <tuv xml:lang="en"><seg>View on GitHub</seg></tuv>
-      <tuv xml:lang="ar"><seg>عرض على GitHub</seg></tuv>
+    <!-- ===================== EXPÉRIENCE : LEONA ===================== -->
+    <tu tuid="exp_leona_role"><tuv xml:lang="fr"><seg>Cofondateur &amp; Directeur technique (CTO)</seg></tuv><tuv xml:lang="en"><seg>Co-Founder &amp; CTO</seg></tuv><tuv xml:lang="ar"><seg>شريك مؤسّس ومدير تقني (CTO)</seg></tuv></tu>
+    <tu tuid="exp_leona_period"><tuv xml:lang="fr"><seg>Mai 2025 – Aujourd'hui</seg></tuv><tuv xml:lang="en"><seg>May 2025 – Present</seg></tuv><tuv xml:lang="ar"><seg>ماي 2025 – حتى الآن</seg></tuv></tu>
+    <tu tuid="exp_leona_desc">
+      <tuv xml:lang="fr"><seg>Marque de mode célébrant l'habit traditionnel féminin algérien à travers une expérience numérique moderne. Conception et développement de la boutique en ligne (stack MERN), systèmes d'inventaire/paiement/analytics, UI/UX sous Figma et visuels 3D sous Blender.</seg></tuv>
+      <tuv xml:lang="en"><seg>Fashion brand celebrating traditional Algerian women's clothing through a modern digital experience. Design and development of the online store (MERN stack), inventory/payment/analytics systems, UI/UX in Figma and 3D visuals in Blender.</seg></tuv>
+      <tuv xml:lang="ar"><seg>علامة أزياء تحتفي باللباس النسائي الجزائري التقليدي عبر تجربة رقمية حديثة. تصميم وتطوير المتجر الإلكتروني (حزمة MERN)، أنظمة المخزون والدفع والتحليلات، تصميم UI/UX عبر Figma ومرئيات ثلاثية الأبعاد عبر Blender.</seg></tuv>
     </tu>
 
-    <!-- ===================== PROJET 1 : Tautologie ===================== -->
-    <tu tuid="proj1_title">
-      <tuv xml:lang="fr"><seg>Implémentation de la tautologie en OCaml</seg></tuv>
-      <tuv xml:lang="en"><seg>Tautology checker implemented in OCaml</seg></tuv>
-      <tuv xml:lang="ar"><seg>برنامج للتحقّق من التطابق المنطقي (Tautology) بلغة OCaml</seg></tuv>
-    </tu>
-    <tu tuid="proj1_desc">
-      <tuv xml:lang="fr"><seg>Implémentation d'un vérificateur de tautologie en OCaml, réalisée à l'Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="en"><seg>Implementation of a tautology checker in OCaml, carried out at Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="ar"><seg>تطوير أداة للتحقّق من التطابق المنطقي بلغة OCaml، أُنجزت في جامعة السوربون باريس الشمالية.</seg></tuv>
-    </tu>
-    <tu tuid="proj1_period">
-      <tuv xml:lang="fr"><seg>Mars 2024 – Avril 2024</seg></tuv>
-      <tuv xml:lang="en"><seg>March 2024 – April 2024</seg></tuv>
-      <tuv xml:lang="ar"><seg>مارس 2024 – أبريل 2024</seg></tuv>
+    <!-- ===================== EXPÉRIENCE : 231 East ===================== -->
+    <tu tuid="exp_231_role"><tuv xml:lang="fr"><seg>Équipier polyvalent</seg></tuv><tuv xml:lang="en"><seg>Versatile Crew Member</seg></tuv><tuv xml:lang="ar"><seg>عضو فريق متعدّد المهام</seg></tuv></tu>
+    <tu tuid="exp_231_period"><tuv xml:lang="fr"><seg>Déc. 2022 – Juil. 2024</seg></tuv><tuv xml:lang="en"><seg>Dec. 2022 – Jul. 2024</seg></tuv><tuv xml:lang="ar"><seg>ديسمبر 2022 – يوليو 2024</seg></tuv></tu>
+    <tu tuid="exp_231_desc">
+      <tuv xml:lang="fr"><seg>Service client en restauration rapide, préparation des plats selon les standards, formation professionnelle en service. Travail d'équipe, adaptabilité et efficacité sous pression.</seg></tuv>
+      <tuv xml:lang="en"><seg>Customer service in a fast-paced restaurant, preparing menu items to brand standards, professional food-service training. Teamwork, adaptability and efficiency under pressure.</seg></tuv>
+      <tuv xml:lang="ar"><seg>خدمة العملاء في مطعم سريع، تحضير الأطباق وفق المعايير، تكوين مهني في الخدمة. عمل جماعي وقدرة على التكيّف والكفاءة تحت الضغط.</seg></tuv>
     </tu>
 
-    <!-- ===================== PROJET 2 : OCTOPUNKS ===================== -->
-    <tu tuid="proj2_title">
-      <tuv xml:lang="fr"><seg>OCTOPUNKS — un clone d'EXAPUNKS</seg></tuv>
-      <tuv xml:lang="en"><seg>OCTOPUNKS — an EXAPUNKS clone</seg></tuv>
-      <tuv xml:lang="ar"><seg>OCTOPUNKS — نسخة مماثلة من لعبة EXAPUNKS</seg></tuv>
-    </tu>
-    <tu tuid="proj2_desc">
-      <tuv xml:lang="fr"><seg>Conception d'un clone d'EXAPUNKS, un jeu de programmation, à l'Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="en"><seg>Design of a clone of EXAPUNKS, a programming game, at Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="ar"><seg>تصميم نسخة من لعبة البرمجة EXAPUNKS في جامعة السوربون باريس الشمالية.</seg></tuv>
-    </tu>
-    <tu tuid="proj2_period">
-      <tuv xml:lang="fr"><seg>2024</seg></tuv>
-      <tuv xml:lang="en"><seg>2024</seg></tuv>
-      <tuv xml:lang="ar"><seg>2024</seg></tuv>
+    <!-- ===================== EXPÉRIENCE : Fiverr ===================== -->
+    <tu tuid="exp_fiverr_role"><tuv xml:lang="fr"><seg>Designer &amp; monteur vidéo freelance</seg></tuv><tuv xml:lang="en"><seg>Freelance Designer &amp; Video Editor</seg></tuv><tuv xml:lang="ar"><seg>مصمّم ومحرّر فيديو مستقل</seg></tuv></tu>
+    <tu tuid="exp_fiverr_period"><tuv xml:lang="fr"><seg>2016 – 2021</seg></tuv><tuv xml:lang="en"><seg>2016 – 2021</seg></tuv><tuv xml:lang="ar"><seg>2016 – 2021</seg></tuv></tu>
+    <tu tuid="exp_fiverr_desc">
+      <tuv xml:lang="fr"><seg>Création de contenus visuels et montage vidéo pour des clients internationaux (Photoshop, Illustrator, After Effects, Premiere Pro). Gestion autonome des projets, du concept à la livraison.</seg></tuv>
+      <tuv xml:lang="en"><seg>Visual content creation and video editing for international clients (Photoshop, Illustrator, After Effects, Premiere Pro). Independent project management from concept to delivery.</seg></tuv>
+      <tuv xml:lang="ar"><seg>إنشاء محتوى بصري ومونتاج فيديو لعملاء دوليين (Photoshop، Illustrator، After Effects، Premiere Pro). إدارة مستقلة للمشاريع من الفكرة إلى التسليم.</seg></tuv>
     </tu>
 
-    <!-- ===================== PROJET 3 : Client-serveur C ===================== -->
-    <tu tuid="proj3_title">
-      <tuv xml:lang="fr"><seg>Application client-serveur en langage C</seg></tuv>
-      <tuv xml:lang="en"><seg>Client-server application in C</seg></tuv>
-      <tuv xml:lang="ar"><seg>تطبيق خادم-عميل بلغة C</seg></tuv>
-    </tu>
-    <tu tuid="proj3_desc">
-      <tuv xml:lang="fr"><seg>Conception et développement d'une application client-serveur en langage C à l'Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="en"><seg>Design and development of a client-server application in C at Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="ar"><seg>تصميم وتطوير تطبيق خادم-عميل بلغة C في جامعة السوربون باريس الشمالية.</seg></tuv>
-    </tu>
+    <!-- ===================== FORMATION ===================== -->
+    <tu tuid="edu_master_title"><tuv xml:lang="fr"><seg>Diplôme d'ingénieur en informatique (Master)</seg></tuv><tuv xml:lang="en"><seg>Engineering Master's Degree in Computer Science</seg></tuv><tuv xml:lang="ar"><seg>دبلوم مهندس دولة في الإعلام الآلي (ماستر)</seg></tuv></tu>
+    <tu tuid="edu_master_org"><tuv xml:lang="fr"><seg>Sup Galilée — Université Sorbonne Paris Nord</seg></tuv><tuv xml:lang="en"><seg>Sup Galilée — Université Sorbonne Paris Nord</seg></tuv><tuv xml:lang="ar"><seg>معهد غاليليه — جامعة السوربون باريس الشمالية</seg></tuv></tu>
+    <tu tuid="edu_master_period"><tuv xml:lang="fr"><seg>2024 – Aujourd'hui</seg></tuv><tuv xml:lang="en"><seg>2024 – Present</seg></tuv><tuv xml:lang="ar"><seg>2024 – حتى الآن</seg></tuv></tu>
 
-    <!-- ===================== PROJET 4 : Unification ===================== -->
-    <tu tuid="proj4_title">
-      <tuv xml:lang="fr"><seg>Algorithme d'unification en OCaml</seg></tuv>
-      <tuv xml:lang="en"><seg>Unification algorithm in OCaml</seg></tuv>
-      <tuv xml:lang="ar"><seg>خوارزمية التوحيد (Unification) بلغة OCaml</seg></tuv>
-    </tu>
-    <tu tuid="proj4_desc">
-      <tuv xml:lang="fr"><seg>Traduction d'un algorithme logique d'unification en langage OCaml, à l'Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="en"><seg>Translation of a logical unification algorithm into OCaml, at Université Sorbonne Paris Nord.</seg></tuv>
-      <tuv xml:lang="ar"><seg>ترجمة خوارزمية منطقية للتوحيد إلى لغة OCaml، في جامعة السوربون باريس الشمالية.</seg></tuv>
-    </tu>
+    <tu tuid="edu_bachelor_title"><tuv xml:lang="fr"><seg>Licence en informatique</seg></tuv><tuv xml:lang="en"><seg>Bachelor's Degree in Computer Science</seg></tuv><tuv xml:lang="ar"><seg>إجازة في الإعلام الآلي</seg></tuv></tu>
+    <tu tuid="edu_bachelor_org"><tuv xml:lang="fr"><seg>Institut Galilée — Université Sorbonne Paris Nord</seg></tuv><tuv xml:lang="en"><seg>Institut Galilée — Université Sorbonne Paris Nord</seg></tuv><tuv xml:lang="ar"><seg>معهد غاليليه — جامعة السوربون باريس الشمالية</seg></tuv></tu>
+    <tu tuid="edu_bachelor_period"><tuv xml:lang="fr"><seg>2021 – 2024</seg></tuv><tuv xml:lang="en"><seg>2021 – 2024</seg></tuv><tuv xml:lang="ar"><seg>2021 – 2024</seg></tuv></tu>
 
-    <!-- ===================== PROJET 5 : Sac à dos ===================== -->
-    <tu tuid="proj5_title">
-      <tuv xml:lang="fr"><seg>Problème du sac à dos 0/1 en C / Python</seg></tuv>
-      <tuv xml:lang="en"><seg>0/1 Knapsack problem in C / Python</seg></tuv>
-      <tuv xml:lang="ar"><seg>مسألة حقيبة الظهر 0/1 بلغتي C وPython</seg></tuv>
-    </tu>
-    <tu tuid="proj5_desc">
-      <tuv xml:lang="fr"><seg>Conception et analyse d'algorithmes (backtracking, programmation dynamique, approche gloutonne) pour résoudre le problème du sac à dos 0/1.</seg></tuv>
-      <tuv xml:lang="en"><seg>Design and analysis of algorithms (backtracking, dynamic programming, greedy approach) to solve the 0/1 knapsack problem.</seg></tuv>
-      <tuv xml:lang="ar"><seg>تصميم وتحليل خوارزميات (التراجع، البرمجة الديناميكية، الطريقة الجشعة) لحلّ مسألة حقيبة الظهر 0/1.</seg></tuv>
-    </tu>
+    <tu tuid="edu_pharma_title"><tuv xml:lang="fr"><seg>1re année de Pharmacie</seg></tuv><tuv xml:lang="en"><seg>1st year of Pharmacy</seg></tuv><tuv xml:lang="ar"><seg>السنة الأولى صيدلة</seg></tuv></tu>
+    <tu tuid="edu_pharma_org"><tuv xml:lang="fr"><seg>Faculté de médecine — Université Ferhat Abbas, Sétif</seg></tuv><tuv xml:lang="en"><seg>Faculty of Medicine — Université Ferhat Abbas, Sétif</seg></tuv><tuv xml:lang="ar"><seg>كلية الطب — جامعة فرحات عباس، سطيف</seg></tuv></tu>
+    <tu tuid="edu_pharma_period"><tuv xml:lang="fr"><seg>2020 – 2021</seg></tuv><tuv xml:lang="en"><seg>2020 – 2021</seg></tuv><tuv xml:lang="ar"><seg>2020 – 2021</seg></tuv></tu>
 
-    <!-- ===================== COMPÉTENCES ===================== -->
-    <tu tuid="skills_cat_langs">
-      <tuv xml:lang="fr"><seg>Langages</seg></tuv>
-      <tuv xml:lang="en"><seg>Languages</seg></tuv>
-      <tuv xml:lang="ar"><seg>لغات البرمجة</seg></tuv>
-    </tu>
-    <tu tuid="skills_cat_web">
-      <tuv xml:lang="fr"><seg>Web &amp; sémantique</seg></tuv>
-      <tuv xml:lang="en"><seg>Web &amp; semantics</seg></tuv>
-      <tuv xml:lang="ar"><seg>الويب والدلالة</seg></tuv>
-    </tu>
-    <tu tuid="skills_cat_tools">
-      <tuv xml:lang="fr"><seg>Outils</seg></tuv>
-      <tuv xml:lang="en"><seg>Tools</seg></tuv>
-      <tuv xml:lang="ar"><seg>الأدوات</seg></tuv>
-    </tu>
+    <tu tuid="edu_bac_title"><tuv xml:lang="fr"><seg>Baccalauréat scientifique — mention très bien</seg></tuv><tuv xml:lang="en"><seg>Scientific Baccalaureate — with high honors</seg></tuv><tuv xml:lang="ar"><seg>بكالوريا علمية — بتقدير ممتاز</seg></tuv></tu>
+    <tu tuid="edu_bac_org"><tuv xml:lang="fr"><seg>Lycée Malek Bennabi, Sétif</seg></tuv><tuv xml:lang="en"><seg>Lycée Malek Bennabi, Sétif</seg></tuv><tuv xml:lang="ar"><seg>ثانوية مالك بن نبي، سطيف</seg></tuv></tu>
+    <tu tuid="edu_bac_period"><tuv xml:lang="fr"><seg>2019 – 2020</seg></tuv><tuv xml:lang="en"><seg>2019 – 2020</seg></tuv><tuv xml:lang="ar"><seg>2019 – 2020</seg></tuv></tu>
 
-    <!-- ===================== VIDÉO ===================== -->
-    <tu tuid="video_caption">
-      <tuv xml:lang="fr"><seg>La version affichée correspond à la langue active du site.</seg></tuv>
-      <tuv xml:lang="en"><seg>The version shown matches the site's active language.</seg></tuv>
-      <tuv xml:lang="ar"><seg>النسخة المعروضة تطابق لغة الموقع الحالية.</seg></tuv>
+    <!-- ===================== CATÉGORIES DE COMPÉTENCES ===================== -->
+    <tu tuid="skills_cat_prog"><tuv xml:lang="fr"><seg>Langages</seg></tuv><tuv xml:lang="en"><seg>Languages</seg></tuv><tuv xml:lang="ar"><seg>لغات البرمجة</seg></tuv></tu>
+    <tu tuid="skills_cat_frame"><tuv xml:lang="fr"><seg>Frameworks &amp; Web</seg></tuv><tuv xml:lang="en"><seg>Frameworks &amp; Web</seg></tuv><tuv xml:lang="ar"><seg>أطر العمل والويب</seg></tuv></tu>
+    <tu tuid="skills_cat_devops"><tuv xml:lang="fr"><seg>DevOps &amp; Cloud</seg></tuv><tuv xml:lang="en"><seg>DevOps &amp; Cloud</seg></tuv><tuv xml:lang="ar"><seg>DevOps والسحابة</seg></tuv></tu>
+    <tu tuid="skills_cat_data"><tuv xml:lang="fr"><seg>Bases de données</seg></tuv><tuv xml:lang="en"><seg>Databases</seg></tuv><tuv xml:lang="ar"><seg>قواعد البيانات</seg></tuv></tu>
+    <tu tuid="skills_cat_sec"><tuv xml:lang="fr"><seg>Sécurité &amp; Auth</seg></tuv><tuv xml:lang="en"><seg>Security &amp; Auth</seg></tuv><tuv xml:lang="ar"><seg>الأمن والمصادقة</seg></tuv></tu>
+    <tu tuid="skills_cat_design"><tuv xml:lang="fr"><seg>Design &amp; 3D</seg></tuv><tuv xml:lang="en"><seg>Design &amp; 3D</seg></tuv><tuv xml:lang="ar"><seg>التصميم والـ3D</seg></tuv></tu>
+    <tu tuid="skills_cat_ws"><tuv xml:lang="fr"><seg>Web sémantique</seg></tuv><tuv xml:lang="en"><seg>Semantic Web</seg></tuv><tuv xml:lang="ar"><seg>الويب الدلالي</seg></tuv></tu>
+
+    <!-- ===================== LANGUES ===================== -->
+    <tu tuid="lang_ar"><tuv xml:lang="fr"><seg>Arabe — langue maternelle</seg></tuv><tuv xml:lang="en"><seg>Arabic — mother tongue</seg></tuv><tuv xml:lang="ar"><seg>العربية — اللغة الأم</seg></tuv></tu>
+    <tu tuid="lang_fr"><tuv xml:lang="fr"><seg>Français — C2</seg></tuv><tuv xml:lang="en"><seg>French — C2</seg></tuv><tuv xml:lang="ar"><seg>الفرنسية — C2</seg></tuv></tu>
+    <tu tuid="lang_en"><tuv xml:lang="fr"><seg>Anglais — C1</seg></tuv><tuv xml:lang="en"><seg>English — C1</seg></tuv><tuv xml:lang="ar"><seg>الإنجليزية — C1</seg></tuv></tu>
+
+    <!-- ===================== DISTINCTIONS ===================== -->
+    <tu tuid="award_hackathon"><tuv xml:lang="fr"><seg>Finaliste hackathon Isograd — 32e sur 498 (ingénieurs &amp; apprentis)</seg></tuv><tuv xml:lang="en"><seg>Isograd hackathon finalist — ranked 32nd of 498 (engineers &amp; apprentices)</seg></tuv><tuv xml:lang="ar"><seg>متأهّل لنهائي هاكاثون Isograd — المرتبة 32 من 498 (مهندسون ومتدرّبون)</seg></tuv></tu>
+    <tu tuid="award_volley_idf"><tuv xml:lang="fr"><seg>Champion de volley-ball d'Île-de-France (×2) — FFSU</seg></tuv><tuv xml:lang="en"><seg>Île-de-France volleyball champion (×2) — FFSU</seg></tuv><tuv xml:lang="ar"><seg>بطل الكرة الطائرة لجهة إيل دو فرانس (مرّتين) — FFSU</seg></tuv></tu>
+    <tu tuid="award_volley_dz"><tuv xml:lang="fr"><seg>Vainqueur de la Coupe d'Algérie de volley-ball (×2) · Sélections en équipe nationale</seg></tuv><tuv xml:lang="en"><seg>Algerian volleyball cup winner (×2) · National team selections</seg></tuv><tuv xml:lang="ar"><seg>الفوز بكأس الجزائر للكرة الطائرة (مرّتين) · انتقاءات في المنتخب الوطني</seg></tuv></tu>
+
+    <!-- ===================== LOISIRS ===================== -->
+    <tu tuid="hobby_volley"><tuv xml:lang="fr"><seg>Volley-ball — joueur de niveau international</seg></tuv><tuv xml:lang="en"><seg>Volleyball — international-level player</seg></tuv><tuv xml:lang="ar"><seg>الكرة الطائرة — لاعب بمستوى دولي</seg></tuv></tu>
+    <tu tuid="hobby_longboard"><tuv xml:lang="fr"><seg>Longboard dancing &amp; freestyle</seg></tuv><tuv xml:lang="en"><seg>Longboard dancing &amp; freestyle</seg></tuv><tuv xml:lang="ar"><seg>رقص اللونغبورد والحركات الحرة</seg></tuv></tu>
+    <tu tuid="hobby_camping"><tuv xml:lang="fr"><seg>Camping &amp; randonnée — voyages en solo dans 5 pays</seg></tuv><tuv xml:lang="en"><seg>Camping &amp; backpacking — solo trips across 5 countries</seg></tuv><tuv xml:lang="ar"><seg>التخييم والرحلات — أسفار فردية عبر 5 بلدان</seg></tuv></tu>
+    <tu tuid="hobby_photo"><tuv xml:lang="fr"><seg>Photographie &amp; réalisation vidéo</seg></tuv><tuv xml:lang="en"><seg>Photography &amp; filmmaking</seg></tuv><tuv xml:lang="ar"><seg>التصوير وصناعة الأفلام</seg></tuv></tu>
+
+    <!-- ===================== PROJETS ===================== -->
+    <tu tuid="proj_3d_title"><tuv xml:lang="fr"><seg>Portfolio 3D interactif</seg></tuv><tuv xml:lang="en"><seg>Interactive 3D portfolio</seg></tuv><tuv xml:lang="ar"><seg>ملف أعمال تفاعلي ثلاثي الأبعاد</seg></tuv></tu>
+    <tu tuid="proj_3d_desc"><tuv xml:lang="fr"><seg>Portfolio entièrement interactif construit avec React, TypeScript et Three.js.</seg></tuv><tuv xml:lang="en"><seg>Fully interactive portfolio built with React, TypeScript and Three.js.</seg></tuv><tuv xml:lang="ar"><seg>ملف أعمال تفاعلي بالكامل مبني بـ React وTypeScript وThree.js.</seg></tuv></tu>
+
+    <tu tuid="proj_galileolab_title"><tuv xml:lang="fr"><seg>GalileoLab — dessin collaboratif temps réel</seg></tuv><tuv xml:lang="en"><seg>GalileoLab — real-time collaborative drawing</seg></tuv><tuv xml:lang="ar"><seg>GalileoLab — رسم تشاركي في الزمن الحقيقي</seg></tuv></tu>
+    <tu tuid="proj_galileolab_desc"><tuv xml:lang="fr"><seg>Application web de dessin collaboratif en temps réel (PHP, JavaScript, WebSockets, Canvas API).</seg></tuv><tuv xml:lang="en"><seg>Real-time collaborative drawing web app (PHP, JavaScript, WebSockets, Canvas API).</seg></tuv><tuv xml:lang="ar"><seg>تطبيق ويب للرسم التشاركي في الزمن الحقيقي (PHP، JavaScript، WebSockets، Canvas API).</seg></tuv></tu>
+
+    <tu tuid="proj_octopunks_title"><tuv xml:lang="fr"><seg>OCTOPUNKS — clone d'EXAPUNKS</seg></tuv><tuv xml:lang="en"><seg>OCTOPUNKS — an EXAPUNKS clone</seg></tuv><tuv xml:lang="ar"><seg>OCTOPUNKS — نسخة من لعبة EXAPUNKS</seg></tuv></tu>
+    <tu tuid="proj_octopunks_desc"><tuv xml:lang="fr"><seg>Clone du jeu de programmation EXAPUNKS en Java Swing.</seg></tuv><tuv xml:lang="en"><seg>Clone of the programming game EXAPUNKS in Java Swing.</seg></tuv><tuv xml:lang="ar"><seg>نسخة من لعبة البرمجة EXAPUNKS بلغة Java Swing.</seg></tuv></tu>
+
+    <tu tuid="proj_ocaml_title"><tuv xml:lang="fr"><seg>Projets OCaml — tautologie &amp; unification</seg></tuv><tuv xml:lang="en"><seg>OCaml projects — tautology &amp; unification</seg></tuv><tuv xml:lang="ar"><seg>مشاريع OCaml — التطابق المنطقي والتوحيد</seg></tuv></tu>
+    <tu tuid="proj_ocaml_desc"><tuv xml:lang="fr"><seg>Vérificateur de tautologie et algorithme d'unification implémentés en OCaml.</seg></tuv><tuv xml:lang="en"><seg>Tautology checker and unification algorithm implemented in OCaml.</seg></tuv><tuv xml:lang="ar"><seg>أداة للتحقّق من التطابق المنطقي وخوارزمية التوحيد بلغة OCaml.</seg></tuv></tu>
+
+    <tu tuid="proj_cs_title"><tuv xml:lang="fr"><seg>Applications client-serveur en C</seg></tuv><tuv xml:lang="en"><seg>Client-server applications in C</seg></tuv><tuv xml:lang="ar"><seg>تطبيقات خادم-عميل بلغة C</seg></tuv></tu>
+    <tu tuid="proj_cs_desc"><tuv xml:lang="fr"><seg>Applications client-serveur en C (protocole TCP, threads).</seg></tuv><tuv xml:lang="en"><seg>Client-server applications in C (TCP, threads).</seg></tuv><tuv xml:lang="ar"><seg>تطبيقات خادم-عميل بلغة C (بروتوكول TCP، خيوط المعالجة).</seg></tuv></tu>
+
+    <!-- ===================== SECTION WEB SÉMANTIQUE ===================== -->
+    <tu tuid="ws_intro">
+      <tuv xml:lang="fr"><seg>Cette partie regroupe mes travaux du cours de Web sémantique, distincte de mon expérience professionnelle. Ce portfolio lui-même en est la pièce maîtresse : multilingue et annoté sémantiquement.</seg></tuv>
+      <tuv xml:lang="en"><seg>This part gathers my Semantic Web course work, kept separate from my professional experience. This portfolio itself is its centerpiece: multilingual and semantically annotated.</seg></tuv>
+      <tuv xml:lang="ar"><seg>يجمع هذا القسم أعمالي في مقرّر الويب الدلالي، منفصلةً عن خبرتي المهنية. وهذا الملف نفسه هو محورها: متعدّد اللغات وموصوف دلاليًا.</seg></tuv>
     </tu>
+    <tu tuid="ws_portfolio_title"><tuv xml:lang="fr"><seg>Ce portfolio multilingue (RDFa + TMX)</seg></tuv><tuv xml:lang="en"><seg>This multilingual portfolio (RDFa + TMX)</seg></tuv><tuv xml:lang="ar"><seg>هذا الملف متعدّد اللغات (RDFa + TMX)</seg></tuv></tu>
+    <tu tuid="ws_portfolio_desc"><tuv xml:lang="fr"><seg>Site en 3 langues (FR/EN/AR, arabe en RTL), contenu stocké en XML (format TMX 1.4), détection de langue, liens hreflang, et annotations RDFa : Dublin Core, FOAF et schema.org.</seg></tuv><tuv xml:lang="en"><seg>Three-language site (FR/EN/AR, Arabic in RTL), content stored in XML (TMX 1.4), language detection, hreflang links, and RDFa annotations: Dublin Core, FOAF and schema.org.</seg></tuv><tuv xml:lang="ar"><seg>موقع بثلاث لغات (الفرنسية/الإنجليزية/العربية، مع RTL للعربية)، محتوى مخزَّن بصيغة XML (TMX 1.4)، كشف اللغة، روابط hreflang، وتوصيف RDFa: Dublin Core وFOAF وschema.org.</seg></tuv></tu>
+
+    <tu tuid="ws_tp1_title"><tuv xml:lang="fr"><seg>TP1 — XML &amp; DTD</seg></tuv><tuv xml:lang="en"><seg>Lab 1 — XML &amp; DTD</seg></tuv><tuv xml:lang="ar"><seg>العمل التطبيقي 1 — XML وDTD</seg></tuv></tu>
+    <tu tuid="ws_tp1_desc"><tuv xml:lang="fr"><seg>Modélisation d'une forêt et de ses arbres en XML, validée par une DTD. Manipulation des concepts de base du XML structuré.</seg></tuv><tuv xml:lang="en"><seg>Modeling a forest and its trees in XML, validated by a DTD. Hands-on with the fundamentals of structured XML.</seg></tuv><tuv xml:lang="ar"><seg>نمذجة غابة وأشجارها بصيغة XML، مع التحقّق عبر DTD. تطبيق على أساسيات XML المهيكل.</seg></tuv></tu>
+
+    <tu tuid="ws_rdfa_title"><tuv xml:lang="fr"><seg>Annotation sémantique (RDFa)</seg></tuv><tuv xml:lang="en"><seg>Semantic annotation (RDFa)</seg></tuv><tuv xml:lang="ar"><seg>التوصيف الدلالي (RDFa)</seg></tuv></tu>
+    <tu tuid="ws_rdfa_desc"><tuv xml:lang="fr"><seg>Exposition des données de la page (auteur, projets, formation) sous forme de triplets RDF lisibles par les machines, via Dublin Core, FOAF et schema.org.</seg></tuv><tuv xml:lang="en"><seg>Exposing the page's data (author, projects, education) as machine-readable RDF triples, via Dublin Core, FOAF and schema.org.</seg></tuv><tuv xml:lang="ar"><seg>عرض بيانات الصفحة (المؤلّف، المشاريع، التعليم) كثلاثيات RDF مقروءة آليًا، عبر Dublin Core وFOAF وschema.org.</seg></tuv></tu>
+
+    <tu tuid="video_caption"><tuv xml:lang="fr"><seg>La version affichée correspond à la langue active du site.</seg></tuv><tuv xml:lang="en"><seg>The version shown matches the site's active language.</seg></tuv><tuv xml:lang="ar"><seg>النسخة المعروضة تطابق لغة الموقع الحالية.</seg></tuv></tu>
 
     <!-- ===================== CONTACT (section) ===================== -->
-    <tu tuid="contact_intro">
-      <tuv xml:lang="fr"><seg>N'hésitez pas à me contacter pour un projet, une alternance ou une collaboration.</seg></tuv>
-      <tuv xml:lang="en"><seg>Feel free to reach out for a project, a work-study position or a collaboration.</seg></tuv>
-      <tuv xml:lang="ar"><seg>لا تتردّدوا في التواصل معي بخصوص مشروع أو تكوين بالتناوب أو تعاون.</seg></tuv>
-    </tu>
+    <tu tuid="contact_intro"><tuv xml:lang="fr"><seg>Disponible pour des projets, des collaborations ou des opportunités. N'hésitez pas à me contacter.</seg></tuv><tuv xml:lang="en"><seg>Open to projects, collaborations and opportunities. Feel free to get in touch.</seg></tuv><tuv xml:lang="ar"><seg>متاح للمشاريع والتعاون والفرص. لا تتردّدوا في التواصل معي.</seg></tuv></tu>
 
-    <!-- ===================== INTERFACE / LANGUE ===================== -->
-    <tu tuid="lang_switch_label">
-      <tuv xml:lang="fr"><seg>Changer de langue</seg></tuv>
-      <tuv xml:lang="en"><seg>Change language</seg></tuv>
-      <tuv xml:lang="ar"><seg>تغيير اللغة</seg></tuv>
-    </tu>
-    <tu tuid="skip_link">
-      <tuv xml:lang="fr"><seg>Aller au contenu</seg></tuv>
-      <tuv xml:lang="en"><seg>Skip to content</seg></tuv>
-      <tuv xml:lang="ar"><seg>الانتقال إلى المحتوى</seg></tuv>
-    </tu>
-
-    <!-- ===================== PIED DE PAGE ===================== -->
-    <tu tuid="footer_note">
-      <tuv xml:lang="fr"><seg>Site multilingue (FR / EN / AR) — HTML5 + XHTML valide, annoté en RDFa.</seg></tuv>
-      <tuv xml:lang="en"><seg>Multilingual site (FR / EN / AR) — valid HTML5 + XHTML, annotated with RDFa.</seg></tuv>
-      <tuv xml:lang="ar"><seg>موقع متعدّد اللغات (الفرنسية / الإنجليزية / العربية) — متوافق مع HTML5 وXHTML، وموصوف بتقنية RDFa.</seg></tuv>
-    </tu>
+    <!-- ===================== INTERFACE ===================== -->
+    <tu tuid="lang_switch_label"><tuv xml:lang="fr"><seg>Changer de langue</seg></tuv><tuv xml:lang="en"><seg>Change language</seg></tuv><tuv xml:lang="ar"><seg>تغيير اللغة</seg></tuv></tu>
+    <tu tuid="skip_link"><tuv xml:lang="fr"><seg>Aller au contenu</seg></tuv><tuv xml:lang="en"><seg>Skip to content</seg></tuv><tuv xml:lang="ar"><seg>الانتقال إلى المحتوى</seg></tuv></tu>
+    <tu tuid="footer_note"><tuv xml:lang="fr"><seg>Site multilingue (FR / EN / AR) — HTML5 + XHTML valide, annoté en RDFa.</seg></tuv><tuv xml:lang="en"><seg>Multilingual site (FR / EN / AR) — valid HTML5 + XHTML, annotated with RDFa.</seg></tuv><tuv xml:lang="ar"><seg>موقع متعدّد اللغات (الفرنسية / الإنجليزية / العربية) — متوافق مع HTML5 وXHTML، وموصوف بـ RDFa.</seg></tuv></tu>
 
   </body>
 </tmx>
